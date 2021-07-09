@@ -53,6 +53,10 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
     useradd -u $DEV_USER_ID -m -r $DEV_USER && \
     echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers
 
+COPY ./requirements.txt /requirements.txt
+
+RUN pip3 install -r ./requirements.txt
+
 USER $DEV_USER
 
 CMD ["sleep", "infinity"]
