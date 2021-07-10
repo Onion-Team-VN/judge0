@@ -1,4 +1,4 @@
-FROM judge0_compiler AS production
+FROM judge0/compilers:1.6.0-extra AS production
 
 ENV JUDGE0_HOMEPAGE "https://judge0.com"
 LABEL homepage=$JUDGE0_HOMEPAGE
@@ -55,6 +55,8 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
         vim && \
     useradd -u $DEV_USER_ID -m -r $DEV_USER && \
     echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers
+
+RUN pip3 install -r requirements.txt
 
 USER $DEV_USER
 
