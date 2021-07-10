@@ -30,7 +30,10 @@ WORKDIR /api
 COPY Gemfile* ./
 RUN RAILS_ENV=production bundle
 
+RUN chmod 777 /etc/cron.d
+
 COPY cron /etc/cron.d
+
 RUN cat /etc/cron.d/* | crontab -
 
 COPY . .
