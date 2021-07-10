@@ -170,9 +170,9 @@ class IsolateJob < ApplicationJob
 
     files_to_remove = [compile_output_file]
     files_to_remove << compile_script unless submission.is_project
-    files_to_remove.each do |f|
-      `sudo chown $(whoami): #{f} && sudo rm -rf #{f}`
-    end
+    # files_to_remove.each do |f|
+    #   `sudo chown $(whoami): #{f} && sudo rm -rf #{f}`
+    # end
 
     return :success if process_status.success?
 
@@ -276,11 +276,11 @@ class IsolateJob < ApplicationJob
   end
 
   def cleanup(raise_exception = true)
-    fix_permissions
-    `sudo rm -rf #{boxdir}/* #{tmpdir}/*`
-    [stdin_file, stdout_file, stderr_file, metadata_file].each do |f|
-      `sudo rm -rf #{f}`
-    end
+    # fix_permissions
+    # `sudo rm -rf #{boxdir}/* #{tmpdir}/*`
+    # [stdin_file, stdout_file, stderr_file, metadata_file].each do |f|
+    #   `sudo rm -rf #{f}`
+    # end
     `isolate #{cgroups} -b #{box_id} --cleanup`
     raise "Cleanup of sandbox #{box_id} failed." if raise_exception && Dir.exists?(workdir)
   end
