@@ -1,4 +1,4 @@
-FROM judge0/compilers:1.6.0-extra AS production
+FROM judge0_compiler_0.0 AS production
 
 ENV JUDGE0_HOMEPAGE "https://judge0.com"
 LABEL homepage=$JUDGE0_HOMEPAGE
