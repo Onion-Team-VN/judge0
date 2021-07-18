@@ -30,10 +30,7 @@ WORKDIR /api
 COPY Gemfile* ./
 RUN RAILS_ENV=production bundle
 
-RUN chmod 777 /etc/cron.d
-
 COPY cron /etc/cron.d
-
 RUN cat /etc/cron.d/* | crontab -
 
 COPY . .
@@ -41,7 +38,7 @@ COPY . .
 ENTRYPOINT ["/api/docker-entrypoint.sh"]
 CMD ["/api/scripts/server"]
 
-ENV JUDGE0_VERSION "1.16.1-extra"
+ENV JUDGE0_VERSION "1.13.0-extra"
 LABEL version=$JUDGE0_VERSION
 
 
@@ -55,6 +52,8 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
         vim && \
     useradd -u $DEV_USER_ID -m -r $DEV_USER && \
     echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers
+
+RUN pip3 install -r requirements.txt
 
 USER $DEV_USER
 
