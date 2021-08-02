@@ -59,7 +59,7 @@ COPY . ./
 
 RUN apt-get install -y python3.7
 
-RUN apt-get install python3-pip
+RUN apt-get install -y python3-pip
 
 RUN python --version
 
