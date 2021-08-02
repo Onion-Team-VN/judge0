@@ -61,7 +61,9 @@ RUN apt-get install -y python3.7
 
 RUN apt-get install -y python3-pip
 
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python2 2
 
 RUN update-alternatives --set python /usr/bin/python3.7
 
