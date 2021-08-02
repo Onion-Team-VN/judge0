@@ -57,7 +57,7 @@ WORKDIR /judge0
 
 COPY . ./
 
-RUN python version
+RUN python --version
 
 RUN pip install -r requirements.txt
 
