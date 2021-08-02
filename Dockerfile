@@ -55,6 +55,11 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
 
 RUN pip3 install -r requirements.txt
 
+WORKDIR /judge0/onion-lib
+RUN ls
+RUN pip3 install -r requirements.txt
+RUN pip3 install .
+
 USER $DEV_USER
 
 CMD ["sleep", "infinity"]
