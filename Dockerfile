@@ -57,6 +57,8 @@ WORKDIR /judge0
 
 COPY . ./
 
+RUN python version
+
 RUN pip install -r requirements.txt
 
 RUN pip install git+https://github.com/Onion-Team-VN/onion-lib.git
