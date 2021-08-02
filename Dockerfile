@@ -57,7 +57,7 @@ WORKDIR /judge0
 
 COPY . ./
 
-RUN apt-get install python3.7
+RUN apt-get install -y python3.7
 
 RUN python --version
 
