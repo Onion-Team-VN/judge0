@@ -59,6 +59,10 @@ COPY . ./
 
 RUN apt-get install -y python3.7
 
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7
+
+RUN update-alternatives --config python3
+
 RUN python --version
 
 RUN pip install -r requirements.txt
