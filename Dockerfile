@@ -53,13 +53,15 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
     useradd -u $DEV_USER_ID -m -r $DEV_USER && \
     echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers \
 
+WORKDIR /judge0
+
 COPY . ./
 
 RUN pip3 install -r requirements.txt
 
 RUN ls
-WORKDIR /onion-lib
-RUN ls
+WORKDIR /judge0/onion-lib
+
 RUN pip3 install -r requirements.txt
 RUN pip3 install .
 
