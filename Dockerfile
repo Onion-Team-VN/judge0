@@ -59,15 +59,7 @@ COPY . ./
 
 RUN pip3 install -r requirements.txt
 
-RUN ls
-
-WORKDIR /judge0/onion-lib
-
-RUN ls
-
-RUN pip3 install -r requirements.txt
-
-RUN pip3 install .
+RUN pip install git+https://github.com/Onion-Team-VN/onion-lib.git
 
 USER $DEV_USER
 
