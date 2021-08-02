@@ -57,14 +57,15 @@ WORKDIR /judge0
 
 COPY . ./
 
+RUN apt-get install -y python3.7
 
-RUN python2 get-pip.py
+RUN apt-get install -y python3-pip
 
 RUN python --version
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-RUN pip install git+https://github.com/Onion-Team-VN/onion-lib.git
+RUN pip3 install git+https://github.com/Onion-Team-VN/onion-lib.git
 
 USER $DEV_USER
 
