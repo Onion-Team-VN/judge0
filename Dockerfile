@@ -63,7 +63,7 @@ RUN ls
 
 WORKDIR /judge0/onion-lib
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 RUN pip3 install .
 
