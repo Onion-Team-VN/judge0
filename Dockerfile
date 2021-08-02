@@ -55,8 +55,6 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
 
 WORKDIR /judge0
 
-COPY . ./
-
 RUN pip3 install -r requirements.txt
 
 RUN ls
