@@ -1,4 +1,4 @@
-FROM judge0/compilers:1.6.0-extra AS production
+FROM judge0_compilers_extra:latest AS production
 
 ENV JUDGE0_HOMEPAGE "https://judge0.com"
 LABEL homepage=$JUDGE0_HOMEPAGE
@@ -53,25 +53,6 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
     useradd -u $DEV_USER_ID -m -r $DEV_USER && \
     echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers \
 
-WORKDIR /judge0
-
-COPY . ./
-
-RUN apt-get install -y python3.7
-
-RUN apt-get install -y python3-pip
-
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python2 2
-
-RUN update-alternatives --set python /usr/bin/python3.7
-
-RUN python --version
-
-RUN pip3 install -r requirements.txt
-
-RUN pip3 install git+https://github.com/Onion-Team-VN/onion-lib.git
 
 USER $DEV_USER
 
