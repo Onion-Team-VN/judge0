@@ -1,4 +1,4 @@
-FROM judge0_compilers_extra:latest AS production
+FROM onionai/judge0_compilers_extra:latest AS production
 
 ENV JUDGE0_HOMEPAGE "https://judge0.com"
 LABEL homepage=$JUDGE0_HOMEPAGE
