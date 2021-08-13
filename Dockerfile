@@ -51,8 +51,9 @@ RUN apt-get update -o Acquire::Check-Valid-Until=false && \
     apt-get install -y --no-install-recommends \
         vim && \
     useradd -u $DEV_USER_ID -m -r $DEV_USER && \
-    echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers \
+    echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers
 
+RUN pip3 install -r requirements.txt
 
 USER $DEV_USER
 
