@@ -1,4 +1,5 @@
-# Judge0 Extra CE
+
+# Judge0 Extra C
 
 [![Judge0 Wallpaper](https://minio.judge0.com/public/web/image.png)](https://extra-ce.judge0.com)
 
