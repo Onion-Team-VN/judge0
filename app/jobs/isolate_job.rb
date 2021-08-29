@@ -146,6 +146,9 @@ class IsolateJob < ApplicationJob
     -E PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\" \
     -E LANG -E LANGUAGE -E LC_ALL -E JUDGE0_HOMEPAGE -E JUDGE0_SOURCE_CODE -E JUDGE0_MAINTAINER -E JUDGE0_VERSION \
     -d /etc:noexec \
+    -d /usr/local/BosqueLanguage/impl:rw \
+    -d /files:noexec \
+    -d /NuGet/packages:noexec \
     --run \
     -- /bin/bash compile > #{compile_output_file} \
     "
@@ -167,9 +170,9 @@ class IsolateJob < ApplicationJob
 
     files_to_remove = [compile_output_file]
     files_to_remove << compile_script unless submission.is_project
-    files_to_remove.each do |f|
-      `sudo chown $(whoami): #{f} && sudo rm -rf #{f}`
-    end
+    # files_to_remove.each do |f|
+    #   `sudo chown $(whoami): #{f} && sudo rm -rf #{f}`
+    # end
 
     return :success if process_status.success?
 
@@ -197,7 +200,7 @@ class IsolateJob < ApplicationJob
     unless submission.is_project
       # gsub is mandatory!
       command_line_arguments = submission.command_line_arguments.to_s.strip.encode("UTF-8", invalid: :replace).gsub(/[$&;<>|`]/, "")
-      File.open(run_script, "w") { |f| f.write("#{submission.language.run_cmd} #{command_line_arguments}")}
+      File.open(run_script, "w") { |f| f.write("#{submission.language.run_cmd % command_line_arguments}")}
     end
 
     command = "isolate #{cgroups} \
@@ -273,11 +276,11 @@ class IsolateJob < ApplicationJob
   end
 
   def cleanup(raise_exception = true)
-    fix_permissions
-    `sudo rm -rf #{boxdir}/* #{tmpdir}/*`
-    [stdin_file, stdout_file, stderr_file, metadata_file].each do |f|
-      `sudo rm -rf #{f}`
-    end
+    # fix_permissions
+    # `sudo rm -rf #{boxdir}/* #{tmpdir}/*`
+    # [stdin_file, stdout_file, stderr_file, metadata_file].each do |f|
+    #   `sudo rm -rf #{f}`
+    # end
     `isolate #{cgroups} -b #{box_id} --cleanup`
     raise "Cleanup of sandbox #{box_id} failed." if raise_exception && Dir.exists?(workdir)
   end

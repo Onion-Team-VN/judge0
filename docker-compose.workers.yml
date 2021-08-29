@@ -5,11 +5,11 @@ x-logging:
   logging:
     driver: json-file
     options:
-      max-size: 100M
+      max-size: 1000m
 
 services:
-  worker:
-    image: judge0/judge0:latest
+  workers:
+    image: judge0/judge0:latest-extra
     command: ["./scripts/workers"]
     volumes:
       - ./judge0.conf:/judge0.conf:ro

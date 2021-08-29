@@ -1,0 +1,3 @@
+[submodule "onion-lib"]
+	path = onion-lib
+	url = https://github.com/Onion-Team-VN/onion-lib.git

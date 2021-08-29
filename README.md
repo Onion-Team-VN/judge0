@@ -1,6 +1,7 @@
-# Judge0 CE
 
-[![Judge0 Wallpaper](https://minio.judge0.com/public/web/image.png)](https://ce.judge0.com)
+# Judge0 Extra C
+
+[![Judge0 Wallpaper](https://minio.judge0.com/public/web/image.png)](https://extra-ce.judge0.com)
 
 [![License](https://img.shields.io/github/license/judge0/judge0?color=2185d0&style=flat-square)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/judge0/judge0?color=2185d0&style=flat-square)](https://github.com/judge0/judge0/releases)
@@ -28,7 +29,7 @@
 * [License](#license)
 
 ## About
-[Judge0](https://ce.judge0.com) is a robust, scalable, and [open-source](https://github.com/judge0/judge0) **online code execution system**. You can use it to build a wide range of applications that need online code execution features. Some examples include competitive programming platforms, e-learning platforms, candidate assessment and recruitment platforms, online code editors, online IDEs, and many more.
+[Judge0](https://extra-ce.judge0.com) is a robust, scalable, and [open-source](https://github.com/judge0/judge0) **online code execution system**. You can use it to build a wide range of applications that need online code execution features. Some examples include competitive programming platforms, e-learning platforms, candidate assessment and recruitment platforms, online code editors, online IDEs, and many more.
 
 In our research paper [Robust and Scalable Online Code Execution System](https://paper.judge0.com), we present Judge0's modern modular architecture that can be easily deployed and scaled. We study its design, comment on the various challenges in building such systems, and compare it with other available online code execution systems and online judge systems.
 
@@ -38,7 +39,7 @@ Easily integrate online code editor with code execution (a.k.a. online compiler)
 
 ## Features
 - Quick and easy [installation](https://judge0.com/#pricing)
-- Rich and verbose [API documentation](https://ce.judge0.com)
+- Rich and verbose [API documentation](https://extra-ce.judge0.com)
 - Scalable architecture
 - Sandboxed compilation and execution
 - Support for [60+ languages](#supported-languages)
@@ -48,10 +49,10 @@ Easily integrate online code editor with code execution (a.k.a. online compiler)
 - Detailed execution results
 - Webhooks (HTTP callbacks)
 
-For more information about these and other features, please [read the documentation](https://ce.judge0.com).
+For more information about these and other features, please [read the documentation](https://extra-ce.judge0.com).
 
 ## Get Started
-Feel free to start with the [**FREE Basic Plan**](https://judge0.com/ce) on RapidAPI or [host it yourself](https://github.com/judge0/judge0/blob/master/CHANGELOG.md#deployment-procedure).
+Feel free to start with the [**FREE Basic Plan**](https://judge0.com/extra-ce) on RapidAPI or [host it yourself](https://github.com/judge0/judge0/blob/extra/CHANGELOG.md#deployment-procedure).
 
 You can find our detailed plans and pricing [here](https://judge0.com/#pricing).
 
@@ -66,7 +67,7 @@ Judge0 comes in two flavors: [Judge0 CE](https://judge0.com/ce) and [Judge0 Extr
 
 You can find the source code for Judge0 CE on the [`master`](https://github.com/judge0/judge0/tree/master) branch, while you can find the source code for Judge0 Extra CE on the [`extra`](https://github.com/judge0/judge0/tree/extra) branch.
 
-Judge0 Extra CE is also available on [RapidAPI](https://judge0.com/extra-ce).
+Judge0 CE is also available on [RapidAPI](https://judge0.com/ce).
 
 ## Supported Languages
 Judge0 comes in two flavors: [Judge0 CE](https://judge0.com/ce) and [Judge0 Extra CE](https://judge0.com/extra-ce). They differ mostly in the [supported languages](#supported-languages).
@@ -495,7 +496,7 @@ Special thanks to open-source projects without whom Judge0 probably wouldn't exi
 Thanks a lot to all [Patrons](https://www.patreon.com/hermanzdosilovic) and [PayPal](https://paypal.me/hermanzdosilovic) donors that support Judge0 development. Thank you! ♥
 
 ## Donate
-Your are more than welcome to support Judge0 development on [Patreon](https://www.patreon.com/hermanzdosilovic), via [PayPal](https://paypal.me/hermanzdosilovic) or [Revolut](https://pay.revolut.com/profile/hermancy5). Thank you.
+You are more than welcome to support Judge0 development on [Patreon](https://www.patreon.com/hermanzdosilovic), via [PayPal](https://paypal.me/hermanzdosilovic) or [Revolut](https://pay.revolut.com/profile/hermancy5). Thank you.
 
 ## License
 Judge0 is licensed under the [GNU General Public License v3.0](LICENSE).

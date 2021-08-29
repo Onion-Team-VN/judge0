@@ -1,7 +1,7 @@
 FORMAT: 1A
-HOST: https://ce.judge0.com
+HOST: https://extra-ce.judge0.com
 
-# Judge0 CE - API Docs
+# Judge0 Extra CE - API Docs
 <!-- include(hostname.html) -->
 <!-- include(style.html) -->
 
@@ -17,7 +17,7 @@ Easily integrate online code editor with code execution (a.k.a. online compiler)
 ## Features
 <ul style="list-style: none; padding-left: 1em;">
     <li><i style="color: #69DB7C; margin-right: 0.1em;" class="fas fa-check-circle"></i> Quick and easy <a href="https://judge0.com/#pricing">installation</a></li>
-    <li><i style="color: #69DB7C; margin-right: 0.1em;" class="fas fa-check-circle"></i> Rich and verbose <a target="_blank" href="https://ce.judge0.com">API documentation</a></li>
+    <li><i style="color: #69DB7C; margin-right: 0.1em;" class="fas fa-check-circle"></i> Rich and verbose <a target="_blank" href="https://extra-ce.judge0.com">API documentation</a></li>
     <li><i style="color: #69DB7C; margin-right: 0.1em;" class="fas fa-check-circle"></i> Scalable architecture</li>
     <li><i style="color: #69DB7C; margin-right: 0.1em;" class="fas fa-check-circle"></i> Sandboxed compilation and execution</li>
     <li><i style="color: #69DB7C; margin-right: 0.1em;" class="fas fa-check-circle"></i> Support for <a target="_blank" href="https://github.com/judge0/judge0#supported-languages">60+ languages</a></li>
@@ -29,7 +29,7 @@ Easily integrate online code editor with code execution (a.k.a. online compiler)
 </ul>
 
 ## Get Started
-Feel free to start with the [**FREE Basic Plan**](https://judge0.com/ce) on RapidAPI or [host it yourself](https://github.com/judge0/judge0/blob/master/CHANGELOG.md#deployment-procedure).
+Feel free to start with the [**FREE Basic Plan**](https://judge0.com/extra-ce) on RapidAPI or [host it yourself](https://github.com/judge0/judge0/blob/extra/CHANGELOG.md#deployment-procedure).
 
 You can find our detailed plans and pricing [here](https://judge0.com/#pricing).
 
@@ -46,10 +46,10 @@ Judge0 comes in two flavors: [Judge0 CE](https://judge0.com/ce) and [Judge0 Extr
 
 You can find the source code for Judge0 CE on the [`master`](https://github.com/judge0/judge0/tree/master) branch, while you can find the source code for Judge0 Extra CE on the [`extra`](https://github.com/judge0/judge0/tree/extra) branch.
 
-Judge0 Extra CE is also available on [RapidAPI](https://judge0.com/extra-ce).
+Judge0 CE is also available on [RapidAPI](https://judge0.com/ce).
 
 ## Version
-This document describes Judge0 CE [v1.13.0](https://github.com/judge0/judge0/tree/v1.13.0).
+This document describes Judge0 Extra CE [v1.13.0](https://github.com/judge0/judge0/tree/v1.13.0-extra).
 
 ## Date and time formats
 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard is used.
@@ -60,7 +60,7 @@ Example: `2016-09-11T10:19:35Z`
 Judge0 is licensed under the [GNU General Public License v3.0](https://github.com/judge0/judge0/blob/master/LICENSE).
 
 ## Donate
-Your are more than welcome to support Judge0 development on [Patreon](https://www.patreon.com/hermanzdosilovic), via [PayPal](https://paypal.me/hermanzdosilovic) or [Revolut](https://pay.revolut.com/profile/hermancy5). Thank you.
+You are more than welcome to support Judge0 development on [Patreon](https://www.patreon.com/hermanzdosilovic), via [PayPal](https://paypal.me/hermanzdosilovic) or [Revolut](https://pay.revolut.com/profile/hermancy5). Thank you.
 
 <br>
 

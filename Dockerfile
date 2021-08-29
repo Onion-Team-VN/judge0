@@ -1,4 +1,4 @@
-FROM judge0/compilers:1.4.0 AS production
+FROM onionai/judge0_compilers_extra:latest AS production
 
 ENV JUDGE0_HOMEPAGE "https://judge0.com"
 LABEL homepage=$JUDGE0_HOMEPAGE
@@ -12,7 +12,7 @@ LABEL maintainer=$JUDGE0_MAINTAINER
 ENV PATH "/usr/local/ruby-2.7.0/bin:/opt/.gem/bin:$PATH"
 ENV GEM_HOME "/opt/.gem/"
 
-RUN apt-get update && \
+RUN apt-get update -o Acquire::Check-Valid-Until=false && \
     apt-get install -y --no-install-recommends \
       cron \
       libpq-dev \
@@ -38,7 +38,7 @@ COPY . .
 ENTRYPOINT ["/api/docker-entrypoint.sh"]
 CMD ["/api/scripts/server"]
 
-ENV JUDGE0_VERSION "1.13.0"
+ENV JUDGE0_VERSION "1.13.0-extra"
 LABEL version=$JUDGE0_VERSION
 
 
@@ -47,11 +47,13 @@ FROM production AS development
 ARG DEV_USER=judge0
 ARG DEV_USER_ID=1000
 
-RUN apt-get update && \
+RUN apt-get update -o Acquire::Check-Valid-Until=false && \
     apt-get install -y --no-install-recommends \
         vim && \
     useradd -u $DEV_USER_ID -m -r $DEV_USER && \
     echo "$DEV_USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers
+
+RUN pip3 install -r requirements.txt
 
 USER $DEV_USER
 
